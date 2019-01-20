@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Android Layout Example · I&#x27;m Champ</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;This project I want to share how to create Android layout in components style.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Android Layout Example · I&#x27;m Champ"/><meta property="og:type" content="website"/><meta property="og:url" content="https://champunderscore.github.io/blog/index.html"/><meta property="og:description" content="&lt;p&gt;This project I want to share how to create Android layout in components style.&lt;/p&gt;
+"/><meta property="og:image" content="https://champunderscore.github.io/blog/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://champunderscore.github.io/blog/img/docusaurus.png"/><link rel="shortcut icon" href="/blog/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><link rel="stylesheet" href="/blog/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/blog/"><img class="logo" src="/blog/img/favicon.png" alt="I&#x27;m Champ"/><h2 class="headerTitleWithLogo">I&#x27;m Champ</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/blog/docs/AndroidLayoutExample1" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Android</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Android</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/blog/docs/AndroidLayoutExample1">Android Layout Example</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">React</h3><ul><li class="navListItem"><a class="navItem" href="/blog/docs/doc2">document number 2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">NodeJS</h3><ul><li class="navListItem"><a class="navItem" href="/blog/docs/doc3">This is document number 3</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Android Layout Example</h1></header><article><div><span><p>This project I want to share how to create Android layout in components style.</p>
+<p><img src="./assets/AndroidLayoutExample1/img2.png" alt="Image2"></p>
+<p>Clone this project <a href="https://github.com/champunderscore/Android.Layouts">Github</a></p>
+<h2><a class="anchor" aria-hidden="true" id="getting-started"></a><a href="#getting-started" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Getting Started</h2>
+<p>Separate resource file for each layout.</p>
+<p><img src="./assets/AndroidLayoutExample1/img1.png" alt="Image1"></p>
+<h4><a class="anchor" aria-hidden="true" id="buildgradle"></a><a href="#buildgradle" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>build.gradle</h4>
+<pre><code class="hljs css language-js">    sourceSets {
+        main {
+            res.srcDirs = [
+                    <span class="hljs-string">'src/main/res/layouts/layout_excel'</span>,
+                    <span class="hljs-string">'src/main/res/layouts/layout_youtube'</span>,
+                    <span class="hljs-string">'src/main/res/layouts/layout_joox_player'</span>,
+                    <span class="hljs-string">'src/main/res/layouts/layout_sound_cloud'</span>,
+                    <span class="hljs-string">'src/main/res/layouts/layout_profile'</span>,
+                    <span class="hljs-string">'src/main/res/layouts/layout_instagram'</span>,
+                    <span class="hljs-string">'src/main/res/layouts/layout_spotify_browse'</span>,
+                    <span class="hljs-string">'src/main/res/layouts/layout_spotify_playlist'</span>,
+                    <span class="hljs-string">'src/main/res/layouts'</span>,
+                    <span class="hljs-string">'src/main/res'</span>
+            ]
+        }
+    }
+
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="layout-type"></a><a href="#layout-type" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Layout Type</h4>
+<table>
+<thead>
+<tr><th>Options</th><th>Descriptions</th></tr>
+</thead>
+<tbody>
+<tr><td>Component</td><td>Use for store Widgets</td></tr>
+<tr><td>Container</td><td>Use for store components</td></tr>
+<tr><td>Activity/Fragment</td><td>Use for store Containers</td></tr>
+</tbody>
+</table>
+<p>Example</p>
+<p><img src="./assets/AndroidLayoutExample1/img3.png" alt="Image3"></p>
+<p>This example I create components <code>spotify_browser_list.xml</code>,<code>spotify_browser_toolbar.xml</code> and create <code>spotify_browser_container.xml</code> for store all component.</p>
+<p>Then I create <code>activity_spotify_browser.xml</code> for store all containers.</p>
+<h4><a class="anchor" aria-hidden="true" id="spotify-browser-containerxml"></a><a href="#spotify-browser-containerxml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>spotify_browser_container.xml</h4>
+<pre><code class="hljs css language-xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">android.support.constraint.ConstraintLayout</span> <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span>
+    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">"http://schemas.android.com/tools"</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">include</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/spotify_browse_toolbar"</span>
+        <span class="hljs-attr">layout</span>=<span class="hljs-string">"@layout/spotify_browse_toolbar"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"0dp"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">app:layout_constraintEnd_toEndOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">"parent"</span>
+        <span class="hljs-attr">app:layout_constraintTop_toTopOf</span>=<span class="hljs-string">"parent"</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">include</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/spotify_playlist"</span>
+        <span class="hljs-attr">layout</span>=<span class="hljs-string">"@layout/spotify_playlist"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">app:layout_constraintStart_toStartOf</span>=<span class="hljs-string">"@+id/spotify_browse_toolbar"</span>
+        <span class="hljs-attr">app:layout_constraintTop_toBottomOf</span>=<span class="hljs-string">"@+id/spotify_browse_toolbar"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">android.support.constraint.ConstraintLayout</span>&gt;</span>
+
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="activity-spotify-browserxml"></a><a href="#activity-spotify-browserxml" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>activity_spotify_browser.xml</h4>
+<pre><code class="hljs css language-xml"><span class="hljs-meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">android.support.v4.widget.DrawerLayout</span>
+    <span class="hljs-attr">xmlns:android</span>=<span class="hljs-string">"http://schemas.android.com/apk/res/android"</span>
+    <span class="hljs-attr">xmlns:app</span>=<span class="hljs-string">"http://schemas.android.com/apk/res-auto"</span>
+    <span class="hljs-attr">xmlns:tools</span>=<span class="hljs-string">"http://schemas.android.com/tools"</span>
+    <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/drawer_layout"</span>
+    <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>
+    <span class="hljs-attr">android:fitsSystemWindows</span>=<span class="hljs-string">"true"</span>
+    <span class="hljs-attr">tools:openDrawer</span>=<span class="hljs-string">"start"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">include</span>
+        <span class="hljs-attr">layout</span>=<span class="hljs-string">"@layout/spotify_browse_container"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"match_parent"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span> /&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">android.support.design.widget.NavigationView</span>
+        <span class="hljs-attr">android:id</span>=<span class="hljs-string">"@+id/nav_view"</span>
+        <span class="hljs-attr">android:layout_width</span>=<span class="hljs-string">"wrap_content"</span>
+        <span class="hljs-attr">android:layout_height</span>=<span class="hljs-string">"match_parent"</span>
+        <span class="hljs-attr">android:layout_gravity</span>=<span class="hljs-string">"start"</span>
+        <span class="hljs-attr">android:fitsSystemWindows</span>=<span class="hljs-string">"true"</span>
+        <span class="hljs-attr">app:headerLayout</span>=<span class="hljs-string">"@layout/nav_header_main"</span>
+        <span class="hljs-attr">app:menu</span>=<span class="hljs-string">"@menu/activity_sptify_playlist_drawer"</span> /&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">android.support.v4.widget.DrawerLayout</span>&gt;</span>
+
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="values"></a><a href="#values" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Values</h3>
+<p>I defined values in two types.</p>
+<ul>
+<li>One, Global value uses many where in a project.</li>
+<li>Two, Local value use in one layout.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="switch-activity"></a><a href="#switch-activity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Switch Activity</h4>
+<p>You can clone this project and switch activity in android manifest</p>
+<pre><code class="hljs css language-xml"> <span class="hljs-tag">&lt;<span class="hljs-name">activity</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">".SpotifyPlaylistActivity"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">intent-filter</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.intent.action.MAIN"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">category</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">"android.intent.category.LAUNCHER"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">intent-filter</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">activity</span>&gt;</span>
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/blog/docs/doc2"><span>document number 2</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#getting-started">Getting Started</a><ul class="toc-headings"><li><a href="#values">Values</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"></section><a href="https://code.facebook.com/projects/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/blog/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Champ Patyatawee</section></footer></div></body></html>
