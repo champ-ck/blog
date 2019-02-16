@@ -1,10 +1,14 @@
 {
   "docs": {
-    "Android": ["AndroidLayoutExample1"],
-    "React": ["doc2"],
-    "NodeJS": ["doc3"]
+    "Android": ["AndroidLayoutExample1"]
   },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+  "docs-react": {
+    "React": ["doc2"]
+  },
+  "docs-nodejs": {
+    "DevOps": ["doc3"]
+  },
+  "docs-devops": {
+    "DevOps": ["doc4"]
   }
 }

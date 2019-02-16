@@ -3,7 +3,11 @@ id: AndroidLayoutExample1
 title: Android Layout Example
 ---
 
-This project I want to share how to create Android layout in components style.
+โปรเจคนี้เป็นโปรเจคที่ทำไว้สำหรับมือใหม่ ที่สงสัยว่าการจัด layouts ของ android นั้นทำอย่างไรและควรเลือก `view` หรือ `viewgroup` แบบไหน แต่... 
+
+เคยไหมครับ เวลาจะแก้ layouts แต่ละตัว ทำไมหาไฟล์ยากเหลือเกิน หรือกว่าจะหาส่วนที่ต้องแก้เจอก็เสียเวลาไล่โค้ดไปนานมากๆๆ
+
+ถ้าเคยเรามาลองแยก res ของ android ให้เป็นส่วนๆเพื่อง่ายต่อการหา นอกจากนี้เรามาลองเขียน layouts ในแบบ components style เพื่อง่ายต่อการเรียกใช้และแก้ไขกันดีกว่า
 
 ![Image2](./assets/AndroidLayoutExample1/img2.png)
 
@@ -11,11 +15,21 @@ Clone this project [Github](https://github.com/champunderscore/Android.Layouts)
 
 ## Getting Started
 
-Separate resource file for each layout.
+ เริ่มต้นก็ไม่มีอะไรมากครับ เราจะแยก folders ให้หน้าตาประมาณนี้ 
 
 ![Image1](./assets/AndroidLayoutExample1/img1.png)
 
+
+โดยแนวคิดก็คือถ้าใน layout นั้นมีการเรียก values อย่างเช่น `@string, @style` หรือค่าอื่นๆที่ใช้ภายใน layout นั้นเท่านั้น เราก็จะเก็บไว้ใน folder values ของแต่ละอัน แต่ถ้ามันเป็น value ที่ต้องใช้หลายๆที่ก็จะเอามาเก็บไว้ใน folder values ปกติ 
+
+> ข้อควรระวังคือการตังชื่อตัวแปร ชื่อต้องไม่ซำ้กันนะครับ 
+```
+<string name="user_name">Alison Dan</string>
+```
+
 #### build.gradle
+
+โดยวิธีการแยก res ก็คือเราสามารถไปตั้งใน gradle แบบนี้ได้เลย (ข้อเสียคือต้องเพิ่ม folders ใหม่เอง)
 
 ```js
     sourceSets {
@@ -37,21 +51,27 @@ Separate resource file for each layout.
 
 ```
 
-#### Layout Type
+## Layout Types
+
+มาลองนิยามชนิดของ layouts หน่อยดีกว่า
 
 | Options           | Descriptions             |
 | ----------------- | ------------------------ |
-| Component         | Use for store Widgets    |
-| Container         | Use for store components |
-| Activity/Fragment | Use for store Containers |
+| Component         | ง่ายๆก็คือ widget ต่างๆ ที่เอามารวมกันให้เป็นอะไรซักอย่างนึง เช่น ปุ่ม Like อาจจะเกิดจาก icon + text อะไรแบบนี้    |
+| Container         | ก็คือการเอา Component มารวมกัน เช่นเรามีปุ่ม like, dislike ก็เอามารวมกันเป็น bar หนึ่งอัน  |
+| Activity/Fragment | จากนั้นก็เอา container มาประกอบกันให้เป็น Activity/Fragment ก็เป็นอันเสร็จ |
 
-Example
+
+> ความจริงถ้าคิดว่าการทำ component เป็นเรื่องยุ่งยากก็เอาแค่ container ก็ได้นะ
+
+## Example
 
 ![Image3](./assets/AndroidLayoutExample1/img3.png)
 
-This example I create components `spotify_browser_list.xml`,`spotify_browser_toolbar.xml` and create `spotify_browser_container.xml` for store all component.
+ตัวอย่างก็ประมาณนี้ครับ โดย component ผมจะตั้งชื่อ + ต่อท้าย เช่น list, text, playlist อะไรแบบนี้ ส่วน container ก็ตั้งซื่อแบบโต้งๆ ไปเลย ส่วน activity/fragment ก็ตั้งโต้งๆเหมือน container ก็ทำให้เข้าใจง่ายดี
 
-Then I create `activity_spotify_browser.xml` for store all containers.
+
+ตัวอย่างโค้ด
 
 #### spotify_browser_container.xml
 
@@ -116,16 +136,10 @@ Then I create `activity_spotify_browser.xml` for store all containers.
 
 ```
 
-### Values
 
-I defined values in two types.
+## Switch Activity
 
-- One, Global value uses many where in a project.
-- Two, Local value use in one layout.
-
-#### Switch Activity
-
-You can clone this project and switch activity in android manifest
+พอดีผมไม่ได้แยก ใน manifest ไว้ให้ถ้าอยากลอง run ต้องมาสลับเอาเองนะค๊าบบบ
 
 ```xml
  <activity android:name=".SpotifyPlaylistActivity">
@@ -135,3 +149,5 @@ You can clone this project and switch activity in android manifest
     </intent-filter>
 </activity>
 ```
+
+ในตอนนี้ก็จบเพียงเท่านี้ หวังว่าจะเป็นประโยชน์

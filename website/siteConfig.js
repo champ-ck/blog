@@ -30,7 +30,7 @@ const siteConfig = {
   //   url: 'https://facebook.github.io',
   //   baseUrl: '/test-site/',
 
-  // Used for publishing and more
+  // Used for publishing and moreto be continued
   projectName: "blog",
   organizationName: "champunderscore",
   // For top-level user or org sites, the organization is still the same.
@@ -38,7 +38,13 @@ const siteConfig = {
   //   organizationName: 'JoelMarcey'
 
   // For no header links in the top nav bar -> headerLinks: [],
-  headerLinks: [{ doc: "AndroidLayoutExample1", label: "Blog" }],
+  headerLinks: [
+    { doc: "AndroidLayoutExample1", label: "Android" },
+    { doc: "doc2", label: "React" },
+    { doc: "doc3", label: "NodeJS" },
+    { doc: "doc4", label: "DevOps" },
+    { languages: true }
+  ],
 
   // If you have users set above, you add it here:
   users,
