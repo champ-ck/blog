@@ -6,7 +6,7 @@
     "React": ["doc2"]
   },
   "docs-nodejs": {
-    "DevOps": ["doc3"]
+    "NodeJs": ["NodeJsWithRxJs"]
   },
   "docs-devops": {
     "DevOps": ["doc4"]

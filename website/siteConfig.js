@@ -41,7 +41,7 @@ const siteConfig = {
   headerLinks: [
     { doc: "AndroidLayoutExample1", label: "Android" },
     { doc: "doc2", label: "React" },
-    { doc: "doc3", label: "NodeJS" },
+    { doc: "NodeJsWithRxJs", label: "NodeJS" },
     { doc: "doc4", label: "DevOps" },
     { languages: true }
   ],
