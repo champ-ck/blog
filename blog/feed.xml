@@ -9,10 +9,10 @@
         <generator>Feed for Node.js</generator>
         <image>
             <title>I&apos;m Champ Blog</title>
-            <url>https://champunderscore.github.io/blog/img/favicon.png</url>
+            <url>https://champunderscore.github.io/blog/img/icon1.png</url>
             <link>https://champunderscore.github.io/blog/blog</link>
         </image>
-        <copyright>Copyright © 2019 Champ Patyatawee</copyright>
+        <copyright>Copyright © 2019 champunderscore.github.io</copyright>
         <item>
             <title><![CDATA[New Version 1.0.0]]></title>
             <link>https://champunderscore.github.io/blog/blog/2017/10/24/new-version-1.0.0.html</link>
